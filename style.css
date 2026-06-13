@@ -55,6 +55,85 @@ img { max-width: 100%; display: block; }
 .reveal-child { opacity: 0; transform: translateY(25px); transition: opacity 0.7s ease, transform 0.7s ease; }
 .reveal-child.visible { opacity: 1; transform: translateY(0); }
 
+
+/* ══════════════════════════════════════
+   MÓVIL (max 480px)
+══════════════════════════════════════ */
+@media (max-width: 480px) {
+
+  /* Reproductor */
+  .reproductor {
+    flex-wrap: wrap;
+    padding: 12px 16px;
+    gap: 10px;
+    margin: 12px 16px;
+    max-width: 100%;
+  }
+  .info-cancion {
+    flex: 1;
+    min-width: 0;
+  }
+  .titulo-cancion {
+    font-size: 0.9rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .controles {
+    gap: 6px;
+  }
+  .controles button {
+    font-size: 1.1rem;
+  }
+  #btn-play {
+    width: 34px;
+    height: 34px;
+  }
+
+  /* Hero */
+  .hero__content {
+    padding: 2rem 1rem;
+  }
+  .hero__crown {
+    font-size: 2rem;
+  }
+
+  /* Cuenta regresiva */
+  .countdown {
+    gap: 0.5rem;
+  }
+  .countdown__block {
+    padding: 0.8rem 0.9rem;
+    min-width: 70px;
+  }
+  .countdown__sep {
+    display: none;
+  }
+
+  /* Secciones generales */
+  .invite__card {
+    padding: 2rem 1.2rem;
+  }
+  .dresscode__cards {
+    grid-template-columns: 1fr;
+  }
+  .rsvp__buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  .btn {
+    width: 100%;
+    text-align: center;
+    padding: 1rem 1.5rem;
+  }
+
+  /* Galería */
+  .gallery__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.6rem;
+  }
+}
+
 /* ══════════════════════════════════════
    Shared section elements
 ══════════════════════════════════════ */
