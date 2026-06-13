@@ -340,6 +340,87 @@ img { max-width: 100%; display: block; }
   margin-bottom: 1rem;
 }
 
+/* REPRODUCTOR */
+.reproductor {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #1a0a2e;
+  border: 1px solid #c9a84c;
+  border-radius: 16px;
+  padding: 14px 24px;
+  max-width: 480px;
+  margin: 20px auto;
+  box-shadow: 0 0 20px rgba(201, 168, 76, 0.3);
+}
+
+/* Barras animadas */
+.barras-animadas {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 32px;
+}
+.barras-animadas span {
+  width: 5px;
+  background: #c9a84c;
+  border-radius: 3px;
+  animation: bailar 0.8s ease-in-out infinite alternate;
+}
+.barras-animadas span:nth-child(1) { height: 60%; animation-delay: 0s; }
+.barras-animadas span:nth-child(2) { height: 100%; animation-delay: 0.2s; }
+.barras-animadas span:nth-child(3) { height: 40%; animation-delay: 0.4s; }
+.barras-animadas span:nth-child(4) { height: 80%; animation-delay: 0.1s; }
+
+@keyframes bailar {
+  from { transform: scaleY(0.4); }
+  to   { transform: scaleY(1); }
+}
+
+/* Info */
+.info-cancion {
+  flex: 1;
+}
+.titulo-cancion {
+  color: #f0d080;
+  font-weight: bold;
+  margin: 0;
+  font-size: 1rem;
+}
+.artista-cancion {
+  color: #a07830;
+  margin: 0;
+  font-size: 0.85rem;
+}
+
+/* Controles */
+.controles {
+  display: flex;
+  gap: 10px;
+}
+.controles button {
+  background: none;
+  border: none;
+  color: #c9a84c;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.controles button:hover {
+  color: #f0d080;
+}
+#btn-play {
+  background: #c9a84c;
+  color: #1a0a2e;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* ══════════════════════════════════════
    GALLERY
 ══════════════════════════════════════ */

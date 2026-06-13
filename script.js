@@ -66,6 +66,27 @@ function updateCountdown() {
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
+
+function togglePlay() {
+  const audio = document.getElementById("miAudio");
+  const btn = document.getElementById("btn-play");
+
+  if (audio.paused) {
+    audio.play();
+    btn.textContent = "⏸";
+  } else {
+    audio.pause();
+    btn.textContent = "▶";
+  }
+}
+
+function reiniciar() {
+  const audio = document.getElementById("miAudio");
+  audio.currentTime = 0;
+  audio.play();
+  document.getElementById("btn-play").textContent = "⏸";
+}
+
 // ══════════════════════════════════════
 // Scroll reveal con retraso escalonado
 // ══════════════════════════════════════
