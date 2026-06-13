@@ -45,7 +45,7 @@ for (let i = 0; i < STAR_COUNT; i++) {
 // Cuenta regresiva
 // ══════════════════════════════════════
 // ⚠️ Cambia esta fecha por la fecha real del evento
-const EVENT_DATE = new Date('2025-07-12T19:00:00');
+const EVENT_DATE = new Date('2026-07-04T19:00:00');
 
 function pad(n) { return String(n).padStart(2, '0'); }
 
