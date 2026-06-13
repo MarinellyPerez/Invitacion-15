@@ -9,37 +9,51 @@
 </head>
 <body>
 
-  <!-- Partículas de polvo de hadas -->
+  <!-- Partículas -->
   <div class="particles" id="particles"></div>
 
-  <!-- Hero -->
+  <!-- ══ HERO ══ -->
   <section class="hero">
-    <div class="hero__crown">♛</div>
-    <p class="hero__eyebrow">Una vez, en un reino lleno de sueños…</p>
-    <h1 class="hero__name">María Alejandra</h1>
-    <p class="hero__sub">cumple sus</p>
-    <div class="hero__number">XV</div>
-    <p class="hero__tagline">años</p>
-    <div class="hero__divider">✦ ── ── ── ✦ ── ── ── ✦</div>
+    <div class="hero__bg-stars" id="stars"></div>
+    <div class="hero__content">
+      <div class="hero__crown">♛</div>
+      <p class="hero__eyebrow">Érase una vez, en un reino lleno de magia…</p>
+      <h1 class="hero__name">María<br>Alejandra</h1>
+      <div class="hero__number-wrap">
+        <span class="hero__number">XV</span>
+        <span class="hero__anos">años</span>
+      </div>
+      <div class="hero__divider">✦ ── ── ✦ ── ── ✦</div>
+      <p class="hero__date-preview">12 · Julio · 2025</p>
+      <a href="#invite" class="hero__scroll">↓ Ver invitación</a>
+    </div>
   </section>
 
-  <!-- Invitación -->
-  <section class="invite">
+  <!-- ══ INVITACIÓN ══ -->
+  <section class="invite reveal" id="invite">
+    <div class="section__ornament">✦</div>
+    <h2 class="section__title">La Invitación</h2>
     <div class="invite__card">
-      <p class="invite__intro">Con infinita alegría, te invitamos a ser parte de este cuento de hadas</p>
+      <p class="invite__intro">
+        Con el corazón lleno de alegría, la familia Rodríguez<br>
+        tiene el honor de invitarte a celebrar el inicio de un nuevo capítulo
+        en el cuento de hadas de su princesa
+      </p>
       <div class="invite__details">
-        <div class="detail">
-          <span class="detail__icon">🌙</span>
+        <div class="detail reveal-child">
+          <div class="detail__icon-wrap">🌙</div>
           <span class="detail__label">Fecha</span>
           <span class="detail__value">Sábado, 12 de Julio 2025</span>
         </div>
-        <div class="detail">
-          <span class="detail__icon">⏳</span>
+        <div class="detail__sep">✦</div>
+        <div class="detail reveal-child">
+          <div class="detail__icon-wrap">⏳</div>
           <span class="detail__label">Hora</span>
           <span class="detail__value">7:00 PM</span>
         </div>
-        <div class="detail">
-          <span class="detail__icon">🏰</span>
+        <div class="detail__sep">✦</div>
+        <div class="detail reveal-child">
+          <div class="detail__icon-wrap">🏰</div>
           <span class="detail__label">Lugar</span>
           <span class="detail__value">Salón El Palacio Dorado<br/>Montería, Córdoba</span>
         </div>
@@ -47,36 +61,136 @@
     </div>
   </section>
 
-  <!-- Cuenta regresiva -->
+  <!-- ══ CUENTA REGRESIVA ══ -->
   <section class="countdown-section">
-    <p class="countdown__label">El cuento comienza en…</p>
-    <div class="countdown" id="countdown">
-      <div class="countdown__block">
-        <span class="countdown__num" id="days">00</span>
-        <span class="countdown__unit">Días</span>
-      </div>
-      <span class="countdown__sep">✦</span>
-      <div class="countdown__block">
-        <span class="countdown__num" id="hours">00</span>
-        <span class="countdown__unit">Horas</span>
-      </div>
-      <span class="countdown__sep">✦</span>
-      <div class="countdown__block">
-        <span class="countdown__num" id="minutes">00</span>
-        <span class="countdown__unit">Minutos</span>
-      </div>
-      <span class="countdown__sep">✦</span>
-      <div class="countdown__block">
-        <span class="countdown__num" id="seconds">00</span>
-        <span class="countdown__unit">Segundos</span>
+    <div class="countdown-section__inner">
+      <p class="countdown__label">El cuento comienza en…</p>
+      <div class="countdown" id="countdown">
+        <div class="countdown__block">
+          <span class="countdown__num" id="days">00</span>
+          <span class="countdown__unit">Días</span>
+        </div>
+        <span class="countdown__sep">✦</span>
+        <div class="countdown__block">
+          <span class="countdown__num" id="hours">00</span>
+          <span class="countdown__unit">Horas</span>
+        </div>
+        <span class="countdown__sep">✦</span>
+        <div class="countdown__block">
+          <span class="countdown__num" id="minutes">00</span>
+          <span class="countdown__unit">Minutos</span>
+        </div>
+        <span class="countdown__sep">✦</span>
+        <div class="countdown__block">
+          <span class="countdown__num" id="seconds">00</span>
+          <span class="countdown__unit">Segundos</span>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Confirmación -->
-  <section class="rsvp">
-    <h2 class="rsvp__title">¿Asistirás al baile?</h2>
-    <p class="rsvp__sub">Confirma tu asistencia antes del 30 de Junio</p>
+  <!-- ══ SOBRE LA QUINCEAÑERA ══ -->
+  <section class="about reveal">
+    <div class="section__ornament">✦</div>
+    <h2 class="section__title">Nuestra Princesa</h2>
+    <div class="about__grid">
+      <div class="about__photo-wrap reveal-child">
+        <!-- Reemplaza el src con la foto real -->
+        <div class="about__photo-placeholder">
+          <span>👑</span>
+          <p>Foto de<br>María Alejandra</p>
+          <small>(reemplazar con foto real)</small>
+        </div>
+      </div>
+      <div class="about__text reveal-child">
+        <p class="about__quote">"Cada sueño que vale la pena comienza con una chispa de magia."</p>
+        <p class="about__bio">
+          María Alejandra es una joven llena de luz, alegría y amor. Sus 15 años
+          marcan el inicio de un capítulo lleno de nuevas aventuras, ilusiones
+          y momentos que quedarán grabados para siempre en el corazón de quienes
+          la conocen y la quieren.
+        </p>
+        <p class="about__bio">
+          Esta noche especial es para ella, para celebrar quién es y todo lo que
+          está por venir en su hermoso cuento de hadas.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ GALERÍA ══ -->
+  <section class="gallery reveal">
+    <div class="gallery__bg"></div>
+    <div class="section__ornament light">✦</div>
+    <h2 class="section__title light">Momentos Mágicos</h2>
+    <p class="gallery__sub">Algunos recuerdos del camino hasta hoy…</p>
+    <div class="gallery__grid">
+      <!-- Reemplaza los divs con <img src="assets/img/foto1.jpg"> -->
+      <div class="gallery__item reveal-child">
+        <div class="gallery__placeholder">📸<br><small>Foto 1</small></div>
+      </div>
+      <div class="gallery__item reveal-child">
+        <div class="gallery__placeholder">📸<br><small>Foto 2</small></div>
+      </div>
+      <div class="gallery__item reveal-child">
+        <div class="gallery__placeholder">📸<br><small>Foto 3</small></div>
+      </div>
+      <div class="gallery__item reveal-child">
+        <div class="gallery__placeholder">📸<br><small>Foto 4</small></div>
+      </div>
+      <div class="gallery__item reveal-child">
+        <div class="gallery__placeholder">📸<br><small>Foto 5</small></div>
+      </div>
+      <div class="gallery__item reveal-child">
+        <div class="gallery__placeholder">📸<br><small>Foto 6</small></div>
+      </div>
+    </div>
+    <p class="gallery__hint">💡 Para agregar fotos reales, reemplaza cada bloque de galería con: <code>&lt;img src="assets/img/tu-foto.jpg"&gt;</code></p>
+  </section>
+
+  <!-- ══ CÓDIGO DE VESTIMENTA ══ -->
+  <section class="dresscode reveal">
+    <div class="section__ornament">✦</div>
+    <h2 class="section__title">Código de Vestimenta</h2>
+    <p class="dresscode__intro">Para esta noche de cuento de hadas, te pedimos vestir acorde a la magia del momento</p>
+    <div class="dresscode__cards">
+      <div class="dresscode__card reveal-child">
+        <div class="dresscode__icon">👗</div>
+        <h3 class="dresscode__name">Damas</h3>
+        <p class="dresscode__desc">Vestido largo o cocktail<br>Colores: dorado, blanco, rosa o champagne</p>
+        <div class="dresscode__badge">Elegante Formal</div>
+      </div>
+      <div class="dresscode__card dresscode__card--center reveal-child">
+        <div class="dresscode__icon">🎩</div>
+        <h3 class="dresscode__name">Caballeros</h3>
+        <p class="dresscode__desc">Traje o smoking<br>Corbata o moño recomendado</p>
+        <div class="dresscode__badge">Gala</div>
+      </div>
+      <div class="dresscode__card reveal-child">
+        <div class="dresscode__icon">🚫</div>
+        <h3 class="dresscode__name">Evitar</h3>
+        <p class="dresscode__desc">Ropa deportiva, jeans<br>o colores muy informales</p>
+        <div class="dresscode__badge dresscode__badge--avoid">No permitido</div>
+      </div>
+    </div>
+    <div class="dresscode__palette">
+      <p class="dresscode__palette-label">Paleta sugerida</p>
+      <div class="dresscode__colors">
+        <div class="color-dot" style="background:#c9a84c" title="Dorado"></div>
+        <div class="color-dot" style="background:#f5f0e8" title="Champagne"></div>
+        <div class="color-dot" style="background:#e8c8d8" title="Rosa pálido"></div>
+        <div class="color-dot" style="background:#d4c5a9" title="Beige"></div>
+        <div class="color-dot" style="background:#2a1a06" title="Negro/Café oscuro"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ CONFIRMACIÓN ══ -->
+  <section class="rsvp reveal">
+    <div class="rsvp__bg"></div>
+    <div class="section__ornament light">✦</div>
+    <h2 class="section__title light">¿Asistirás al Baile?</h2>
+    <p class="rsvp__sub">Confirma tu asistencia antes del <strong>30 de Junio</strong></p>
     <div class="rsvp__buttons">
       <a class="btn btn--yes" href="https://wa.me/573000000000?text=¡Confirmo%20mi%20asistencia%20a%20los%2015%20de%20María%20Alejandra!">
         ✨ Sí, asistiré
@@ -85,11 +199,17 @@
         No podré ir
       </a>
     </div>
+    <div class="rsvp__note">
+      <p>Al confirmar, te llegará información adicional por WhatsApp 💌</p>
+    </div>
   </section>
 
-  <!-- Footer -->
+  <!-- ══ FOOTER ══ -->
   <footer class="footer">
-    <p>✦ Con amor, la familia de María Alejandra ✦</p>
+    <div class="footer__crown">♛</div>
+    <p class="footer__text">Con todo el amor del mundo</p>
+    <p class="footer__family">✦ La familia de María Alejandra ✦</p>
+    <p class="footer__copy">© 2025 · Todos los derechos reservados</p>
   </footer>
 
   <script src="script.js"></script>
