@@ -66,11 +66,12 @@ function updateCountdown() {
 updateCountdown();
 setInterval(updateCountdown, 1000);
 
+//AUDIO
+
+const audio = document.getElementById("miAudio");
+const btn = document.getElementById("btn-play");
 
 function togglePlay() {
-  const audio = document.getElementById("miAudio");
-  const btn = document.getElementById("btn-play");
-
   if (audio.paused) {
     audio.play();
     btn.textContent = "⏸";
@@ -81,10 +82,9 @@ function togglePlay() {
 }
 
 function reiniciar() {
-  const audio = document.getElementById("miAudio");
   audio.currentTime = 0;
   audio.play();
-  document.getElementById("btn-play").textContent = "⏸";
+  btn.textContent = "⏸";
 }
 
 // ══════════════════════════════════════
