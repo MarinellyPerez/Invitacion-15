@@ -115,3 +115,17 @@ const childObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.1 });
 
 document.querySelectorAll('.reveal-child').forEach(el => childObserver.observe(el));
+
+// ══ CORTINA DE ENTRADA ══
+function abrirCortina() {
+  const cortina = document.getElementById('cortina');
+  cortina.classList.add('abierta');
+
+  // Intenta reproducir el audio al entrar
+  const audio = document.getElementById('miAudio');
+  if (audio) audio.play().catch(() => {});
+
+  setTimeout(() => {
+    cortina.classList.add('oculta');
+  }, 1500);
+}
