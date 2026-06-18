@@ -85,7 +85,7 @@
          <a href="https://maps.google.com/?q=Cra.+2EW+%23+16-6,+Montería,+Córdoba" target="_blank" style="text-decoration:none; color:inherit; display:flex; flex-direction:column; align-items:center; gap:0.25rem;">
            <div class="detail__icon-wrap" style="transition: transform 0.2s ease; cursor:pointer;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">🏰</div>
            <span class="detail__label">Lugar</span>
-           <span class="detail__value" style="text-decoration: underline; text-decoration-color: rgba(201,168,76,0.4);">2EW Crr 16 - 6 apto 101 - Barrio Betanci, margen izquierda</span>
+           <span class="detail__value" style="text-decoration: underline; text-decoration-color: rgba(201,168,76,0.4);">2EW Crr 16 - 6 apto 101 <br> Barrio Betanci,<br>margen izquierda</span>
          </a>
        </div>
       </div>
@@ -258,6 +258,24 @@
     </a>
   </div>
 </section>
+
+<!-- ══ LIBRO DE FIRMAS ══ -->
+ <section class="firmas reveal">
+   <div class="section__ornament">✦</div>
+   <h2 class="section__title">Libro de Firmas</h2>
+   <p class="firmas__sub">Deja un mensaje especial para María Alejandra</p>
+
+   <div class="firmas__form-wrap">
+     <input type="text" id="firma-nombre" class="firmas__input" placeholder="Tu nombre" maxlength="50"/>
+     <textarea id="firma-mensaje" class="firmas__textarea" placeholder="Escribe tu mensaje aquí…" maxlength="300" rows="3"></textarea>
+     <button class="firmas__btn" onclick="enviarFirma()">✨ Dejar mi mensaje</button>
+     <p id="firma-status" class="firmas__status"></p>
+   </div>
+
+   <div class="firmas__lista" id="firmas-lista">
+     <p class="firmas__cargando">Cargando mensajes…</p>
+   </div>
+ </section>
 
   <!-- ══ FOOTER ══ -->
   <footer class="footer">
