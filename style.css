@@ -1053,7 +1053,11 @@ img { max-width: 100%; display: block; }
   position: relative;
 }
 .firma__card::before {
-  content: '💌';
+  content: '\f0e0';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  color: var(--gold);
+  opacity: 0.4;
   position: absolute;
   top: 1rem;
   right: 1.2rem;
@@ -1350,4 +1354,24 @@ img { max-width: 100%; display: block; }
 .detail__value {
   color: var(--text-dark) !important;
   font-weight: 400 !important;
+}
+
+/* ══ FONT AWESOME DORADO ══ */
+.detail__icon-wrap i,
+.hero__crown i,
+.dresscode__icon i,
+.sobres__icono i,
+.footer__crown i {
+  color: var(--gold);
+  font-size: inherit;
+}
+.detail__icon-wrap i {
+  font-size: 1.4rem;
+}
+.dresscode__icon i {
+  font-size: 2.5rem;
+}
+.sobres__icono i {
+  font-size: 3rem;
+  filter: drop-shadow(0 0 12px rgba(201,168,76,0.5));
 }
