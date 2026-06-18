@@ -171,7 +171,7 @@ function crearLluviaSobres() {
 crearLluviaSobres();
 
 // ══ LIBRO DE FIRMAS ══
-const SUPABASE_URL = 'https://jndixndjzsnawaysogyf.supabase.co/rest/v1/';
+const SUPABASE_URL = 'https://jndixndjzsnawaysogyf.supabase.co';
 const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpuZGl4bmRqenNuYXdheXNvZ3lmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODE3NDA3OTIsImV4cCI6MjA5NzMxNjc5Mn0.2RBSXcXVHUmdg0Wr1tSxqQi_ctURfGgjE9hEMPUGWgY';
 
 async function cargarFirmas() {
@@ -188,13 +188,14 @@ async function cargarFirmas() {
       lista.innerHTML = '<p class="firmas__cargando">Sé el primero en dejar un mensaje 💌</p>';
       return;
     }
-    lista.innerHTML = data.map(f => `
-      <div class="firma__card">
-        <p class="firma__nombre">${f.nombre}</p>
-        <p class="firma__mensaje">"${f.mensaje}"</p>
-        <p class="firma__fecha">${new Date(f.created_at).toLocaleDateString('es-CO', { day:'numeric', month:'long', year:'numeric' })}</p>
-      </div>
-    `).join('');
+  lista.innerHTML = data.map(f => `
+    <div class="firma__card">
+      <p class="firma__nombre">${f.nombre}</p>
+      <p class="firma__mensaje">"${f.mensaje}"</p>
+      <p class="firma__fecha">${new Date(f.created_at).toLocaleDateString('es-CO', { day:'numeric', month:'long', year:'numeric' })}</p>
+      ${adminActivo ? `<button class="firma__borrar" onclick="borrarFirma(${f.id})">🗑️ Borrar</button>` : ''}
+   </div>
+  `).join('');
   } catch {
     lista.innerHTML = '<p class="firmas__cargando">No se pudieron cargar los mensajes.</p>';
   }
@@ -238,3 +239,34 @@ async function enviarFirma() {
 }
 
 cargarFirmas();
+
+// ══ ADMIN ══
+let adminActivo = false;
+const ADMIN_PASSWORD = 'maria2026'; // Cambia esto por tu contraseña
+
+function activarAdmin() {
+  const clave = prompt('Contraseña de administrador:');
+  if (clave === ADMIN_PASSWORD) {
+    adminActivo = true;
+    cargarFirmas();
+    alert('✅ Modo administrador activado');
+  } else {
+    alert('Contraseña incorrecta');
+  }
+}
+
+async function borrarFirma(id) {
+  if (!confirm('¿Segura que quieres borrar este mensaje?')) return;
+  try {
+    const res = await fetch(`${SUPABASE_URL}/rest/v1/firmas?id=eq.${id}`, {
+      method: 'DELETE',
+      headers: {
+        'apikey': SUPABASE_KEY,
+        'Authorization': `Bearer ${SUPABASE_KEY}`
+      }
+    });
+    if (res.ok) cargarFirmas();
+  } catch {
+    alert('Error al borrar el mensaje.');
+  }
+}

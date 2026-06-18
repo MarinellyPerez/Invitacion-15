@@ -1080,3 +1080,17 @@ img { max-width: 100%; display: block; }
   margin-top: 0.6rem;
   letter-spacing: 0.1em;
 }
+
+.firma__borrar {
+  margin-top: 0.6rem;
+  background: none;
+  border: 1px solid rgba(180,60,60,0.3);
+  color: #c05040;
+  font-size: 0.75rem;
+  padding: 0.3rem 0.8rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.firma__borrar:hover {
+  background: rgba(180,60,60,0.1);
+}
