@@ -129,3 +129,43 @@ function abrirCortina() {
     cortina.classList.add('oculta');
   }, 1500);
 }
+
+// ══ LLUVIA DE SOBRES ══
+function crearLluviaSobres() {
+  const contenedor = document.getElementById('sobres-container');
+  if (!contenedor) return;
+
+  const emojis = ['💌', '✉️', '💛', '⭐'];
+  const colores = ['#f7e099', '#c9a84c', '#ffe8b0', '#fff5d0', '#e8c96a'];
+
+  // Sobres
+  for (let i = 0; i < 18; i++) {
+    const sobre = document.createElement('div');
+    sobre.classList.add('sobre-item');
+    sobre.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+    sobre.style.cssText = `
+      left: ${Math.random() * 100}%;
+      --dur: ${3 + Math.random() * 4}s;
+      --delay: ${Math.random() * 6}s;
+      font-size: ${1.2 + Math.random() * 1.4}rem;
+    `;
+    contenedor.appendChild(sobre);
+  }
+
+  // Partículas doradas
+  for (let i = 0; i < 30; i++) {
+    const p = document.createElement('div');
+    p.classList.add('particula-sobre');
+    const size = 3 + Math.random() * 6;
+    p.style.cssText = `
+      left: ${Math.random() * 100}%;
+      --size: ${size}px;
+      --color: ${colores[Math.floor(Math.random() * colores.length)]};
+      --dur: ${2 + Math.random() * 4}s;
+      --delay: ${Math.random() * 7}s;
+    `;
+    contenedor.appendChild(p);
+  }
+}
+
+crearLluviaSobres();

@@ -881,3 +881,90 @@ img { max-width: 100%; display: block; }
 .cortina.abierta .cortina__der { transform: translateX(100%); }
 .cortina.abierta .cortina__centro { opacity: 0; pointer-events: none; transition: opacity 0.4s ease; }
 .cortina.oculta { display: none; }
+
+/* ══ LLUVIA DE SOBRES ══ */
+.sobres {
+  position: relative;
+  padding: 6rem 1.5rem;
+  background: linear-gradient(135deg, #1a0f04 0%, #2e1c09 100%);
+  text-align: center;
+  overflow: hidden;
+  z-index: 1;
+}
+.sobres__lluvia {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+.sobre-item {
+  position: absolute;
+  top: -60px;
+  font-size: 1.6rem;
+  opacity: 0;
+  animation: caerSobre var(--dur, 4s) ease-in var(--delay, 0s) infinite;
+}
+.particula-sobre {
+  position: absolute;
+  top: -10px;
+  width: var(--size, 6px);
+  height: var(--size, 6px);
+  background: var(--color, #c9a84c);
+  border-radius: 50%;
+  opacity: 0;
+  animation: caerParticula var(--dur, 3s) ease-in var(--delay, 0s) infinite;
+}
+@keyframes caerSobre {
+  0%   { transform: translateY(0) rotate(-10deg) scale(0.8); opacity: 0; }
+  10%  { opacity: 0.9; }
+  90%  { opacity: 0.6; }
+  100% { transform: translateY(110vh) rotate(15deg) scale(1); opacity: 0; }
+}
+@keyframes caerParticula {
+  0%   { transform: translateY(0) scale(0); opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 0.4; }
+  100% { transform: translateY(110vh) scale(1.2); opacity: 0; }
+}
+.sobres__card {
+  position: relative;
+  z-index: 2;
+  max-width: 480px;
+  margin: 0 auto;
+  border: 1px solid rgba(201,168,76,0.4);
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(6px);
+  padding: 3rem 2rem;
+  box-shadow: 0 12px 50px rgba(201,168,76,0.2);
+}
+.sobres__icono {
+  font-size: 3.5rem;
+  margin-bottom: 1.2rem;
+  animation: crownPulse 3s ease-in-out infinite;
+}
+.sobres__texto {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+  color: var(--gold-light);
+  line-height: 1.9;
+  margin-bottom: 1.5rem;
+}
+.sobres__texto strong {
+  color: var(--gold);
+  font-weight: 600;
+}
+.sobres__divider {
+  color: var(--gold);
+  opacity: 0.4;
+  letter-spacing: 0.2em;
+  font-size: 0.85rem;
+  margin-bottom: 1.5rem;
+}
+.sobres__sub {
+  font-family: 'Cormorant Garamond', serif;
+  font-style: italic;
+  color: var(--gold-light);
+  opacity: 0.7;
+  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  line-height: 1.7;
+}
