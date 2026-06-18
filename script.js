@@ -24,7 +24,7 @@ for (let i = 0; i < PARTICLE_COUNT; i++) {
 // Estrellas en el hero
 // ══════════════════════════════════════
 const starsContainer = document.getElementById('stars');
-const STAR_COUNT = 80;
+const STAR_COUNT = 150;
 
 for (let i = 0; i < STAR_COUNT; i++) {
   const s = document.createElement('div');

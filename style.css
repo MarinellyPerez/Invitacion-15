@@ -1094,3 +1094,117 @@ img { max-width: 100%; display: block; }
 .firma__borrar:hover {
   background: rgba(180,60,60,0.1);
 }
+
+/* ══ UPGRADE MÁGICO ══ */
+
+/* Títulos con fuente decorativa */
+.hero__name {
+  font-family: 'Cinzel Decorative', serif !important;
+}
+.section__title {
+  font-family: 'Cinzel Decorative', serif !important;
+  font-size: clamp(1.3rem, 3.5vw, 2.2rem) !important;
+}
+
+/* Brillo animado en el título del hero */
+.hero__name {
+  animation: brilloNombre 4s ease-in-out infinite;
+}
+@keyframes brilloNombre {
+  0%, 100% { filter: drop-shadow(0 2px 12px rgba(201,168,76,0.5)); }
+  50%       { filter: drop-shadow(0 2px 30px rgba(247,224,153,0.9)); }
+}
+
+/* Bordes decorativos en las secciones */
+.invite__card,
+.sobres__card,
+.firmas__form-wrap {
+  position: relative;
+}
+.invite__card::before,
+.invite__card::after,
+.sobres__card::before,
+.sobres__card::after {
+  font-size: 2rem !important;
+  opacity: 0.5 !important;
+}
+
+/* Línea dorada animada bajo los títulos */
+.section__title::after {
+  content: '✦ ── ── ✦ ── ── ✦';
+  display: block;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: var(--gold);
+  opacity: 0.4;
+  margin-top: 0.6rem;
+  animation: parpadeo 3s ease-in-out infinite;
+}
+@keyframes parpadeo {
+  0%, 100% { opacity: 0.4; }
+  50%       { opacity: 0.8; }
+}
+
+/* Fondo de secciones claras con textura sutil */
+.invite, .about, .dresscode, .firmas, .album {
+  background-image: radial-gradient(circle, rgba(201,168,76,0.04) 1px, transparent 1px) !important;
+  background-size: 28px 28px !important;
+}
+
+/* Cards con esquinas decorativas más pronunciadas */
+.invite__card {
+  box-shadow: 0 20px 80px rgba(201,168,76,0.2), inset 0 0 120px rgba(245,217,122,0.04) !important;
+}
+
+/* Números del countdown más mágicos */
+.countdown__num {
+  text-shadow: 0 0 30px rgba(247,224,153,0.6);
+}
+
+/* Íconos de detalle con brillo */
+.detail__icon-wrap {
+  animation: iconoBrillo 3s ease-in-out infinite;
+  box-shadow: 0 4px 20px rgba(201,168,76,0.4) !important;
+}
+@keyframes iconoBrillo {
+  0%, 100% { box-shadow: 0 4px 14px rgba(201,168,76,0.3); }
+  50%       { box-shadow: 0 4px 28px rgba(247,224,153,0.7); }
+}
+
+/* Hero con gradiente más profundo */
+.hero {
+  background: radial-gradient(ellipse at 50% 20%, #4a2e0a 0%, #2a1506 40%, #0f0803 100%) !important;
+}
+
+/* Botones con shimmer más pronunciado */
+.btn--yes, .cortina__btn, .firmas__btn, .album__btn {
+  background-size: 300% 300% !important;
+  animation: shimmer 2.5s ease infinite !important;
+}
+
+/* Separadores de sección */
+.section__ornament {
+  font-size: 1.5rem !important;
+  animation: parpadeo 2s ease-in-out infinite;
+}
+
+/* Scroll suave con indicador mágico */
+.hero__scroll {
+  border: 1px solid rgba(201,168,76,0.3);
+  padding: 0.6rem 1.5rem;
+  letter-spacing: 0.3em;
+  font-size: 0.7rem;
+}
+.hero__scroll:hover {
+  background: rgba(201,168,76,0.1);
+  border-color: var(--gold);
+}
+
+/* Footer más elegante */
+.footer {
+  background: linear-gradient(180deg, var(--dark) 0%, #0a0502 100%) !important;
+}
+.footer__crown {
+  font-size: 2.5rem !important;
+  animation: crownPulse 3s ease-in-out infinite;
+}
